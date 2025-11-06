@@ -1,0 +1,9 @@
+{
+  "name": "odd-school-app",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A lightweight SPA template with hash-based routing",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
