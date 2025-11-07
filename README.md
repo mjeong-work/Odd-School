@@ -2,12 +2,16 @@
 
 ## Local development
 
+Install dependencies once and start the local development server with Vite:
+
 ```bash
 npm install
 npm run dev
 ```
 
 ## Production build
+
+Create an optimized production bundle in the `dist` directory:
 
 ```bash
 npm run build
@@ -25,12 +29,12 @@ npm run preview
 npm run deploy
 ```
 
-This publishes the contents of the `dist` directory to the `gh-pages` branch using the [`gh-pages`](https://www.npmjs.com/package/gh-pages) CLI.
+The deploy script publishes the contents of the `dist` directory to the `gh-pages` branch using the [`gh-pages`](https://www.npmjs.com/package/gh-pages) CLI.
 
 ## Live site
 
 Once the GitHub Pages workflow has run, the app will be available at:
 
 ```
-https://mjeong-work.github.io/feat/react-migration/#/
+https://mjeong-work.github.io/Odd-School_v1/#/
 ```
