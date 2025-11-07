@@ -1,0 +1,8 @@
+{
+  "name": "gh-pages",
+  "version": "0.0.0-local",
+  "type": "module",
+  "bin": {
+    "gh-pages": "index.js"
+  }
+}

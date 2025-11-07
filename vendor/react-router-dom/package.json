@@ -1,0 +1,14 @@
+{
+  "name": "react-router-dom",
+  "version": "0.0.0-local",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    }
+  },
+  "types": "index.d.ts"
+}
