@@ -1,41 +1,16 @@
 modules = ["nodejs-20", "web"]
-[agent]
-expertMode = true
+run = "npm run build && npm run preview -- --host 0.0.0.0 --port $PORT"
 
-[workflows]
-runButton = "Project"
+[nix]
+channel = "stable-25_05"
+packages = ["nano"]
 
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "web-app"
-
-[[workflows.workflow]]
-name = "web-app"
-author = "agent"
-
-[workflows.workflow.metadata]
-outputType = "webview"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm run dev -- --host 0.0.0.0 --port 3000"
-waitForPort = 3000
+[env]
+PORT = "3000"
 
 [[ports]]
 localPort = 3000
 externalPort = 80
 
-[[ports]]
-localPort = 5000
-externalPort = 5000
-
-[nix]
-channel = "stable-25_05"
-
-[env]
-PORT = "3000"
+[agent]
+expertMode = true
