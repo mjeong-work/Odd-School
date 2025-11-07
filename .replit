@@ -1,4 +1,4 @@
-modules = ["nodejs-20"]
+modules = ["nodejs-20", "web"]
 [agent]
 expertMode = true
 
@@ -23,9 +23,19 @@ outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "node server.js"
-waitForPort = 5000
+args = "npm run dev -- --host 0.0.0.0 --port 3000"
+waitForPort = 3000
+
+[[ports]]
+localPort = 3000
+externalPort = 80
 
 [[ports]]
 localPort = 5000
-externalPort = 80
+externalPort = 5000
+
+[nix]
+channel = "stable-25_05"
+
+[env]
+PORT = "3000"
