@@ -1,0 +1,41 @@
+.feed-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.feed-page__header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.feed-page__tabs {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.feed-page__tab {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-sm);
+}
+
+.feed-page__search input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.feed-page__posts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
