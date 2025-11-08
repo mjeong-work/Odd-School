@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/Odd-School_v1/',
   plugins: [react()],
+  build: {
+    outDir: 'docs',
+    emptyOutDir: false,
+  },
 })
