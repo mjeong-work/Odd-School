@@ -1,53 +1,20 @@
-import { useEffect, useState } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import FeedPage from './pages/FeedPage/FeedPage'
+import EventPage from './pages/EventPage'
+import Header from './components/Header'
 import './App.css'
 
-const FEED_ROUTE = '/feed'
-const ALLOWED_ROUTES = new Set([FEED_ROUTE])
-
-function getHashPath() {
-  if (typeof window === 'undefined') {
-    return FEED_ROUTE
-  }
-
-  const hash = window.location.hash || '#/'
-  const normalized = hash.startsWith('#') ? hash.slice(1) : hash
-  return normalized || '/'
-}
-
-function useHashPath() {
-  const [path, setPath] = useState(getHashPath)
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return undefined
-
-    const handleHashChange = () => {
-      setPath(getHashPath())
-    }
-
-    window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [])
-
-  return path
-}
-
 function App() {
-  const path = useHashPath()
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    if (!ALLOWED_ROUTES.has(path)) {
-      window.location.hash = `#${FEED_ROUTE}`
-    }
-  }, [path])
-
-  const activePath = ALLOWED_ROUTES.has(path) ? path : FEED_ROUTE
-
   return (
     <div className="app-shell">
+      <Header />
       <div className="app-shell__content">
-        {activePath === FEED_ROUTE && <FeedPage />}
+        <Routes>
+          <Route path="/" element={<Navigate to="/feed" replace />} />
+          <Route path="/feed" element={<FeedPage />} />
+          <Route path="/events" element={<EventPage />} />
+          <Route path="*" element={<Navigate to="/feed" replace />} />
+        </Routes>
       </div>
     </div>
   )
