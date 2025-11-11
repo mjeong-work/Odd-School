@@ -1,31 +1,61 @@
+import { useEffect, useState } from 'react'
 import PostCard from '../../components/PostCard/PostCard'
 import './FeedPage.css'
 
-const MOCK_POSTS = [
-  {
-    id: '1',
-    title: 'Welcome to the new community boards',
-    author: 'Faculty Team',
-    excerpt: 'We are excited to launch the refreshed space for sharing campus updates and wins.',
-    timestamp: '2h ago',
-  },
-  {
-    id: '2',
-    title: 'Career fair prep session this Friday',
-    author: 'Career Center',
-    excerpt: 'Stop by the lab for resume reviews and mock interviews before next week\'s fair.',
-    timestamp: '5h ago',
-  },
-  {
-    id: '3',
-    title: 'Alumni spotlight: STEM innovation panel recap',
-    author: 'Alumni Relations',
-    excerpt: 'Highlights and takeaways from last night\'s panel featuring recent grads in tech.',
-    timestamp: '1d ago',
-  },
-]
+type FeedPost = {
+  id: number
+  category: string
+  title: string
+  content: string
+  images?: string[]
+  likeCount: number
+  commentCount: number
+  createdAt: string
+  authorDisplay: string
+  pinned?: boolean
+}
 
 function FeedPage() {
+  const [posts, setPosts] = useState<FeedPost[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    let isMounted = true
+
+    const loadFeed = async () => {
+      const feedUrl = `${import.meta.env.BASE_URL}mock/feedData.json`
+
+      try {
+        const response = await fetch(feedUrl)
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch feed data')
+        }
+
+        const data: { posts?: FeedPost[] } = await response.json()
+
+        if (isMounted) {
+          setPosts(Array.isArray(data.posts) ? data.posts : [])
+        }
+      } catch (err) {
+        if (isMounted) {
+          setError('피드를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.')
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false)
+        }
+      }
+    }
+
+    void loadFeed()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
   return (
     <div className="feed-page">
       <header className="feed-page__header">
@@ -49,15 +79,25 @@ function FeedPage() {
       </div>
 
       <section className="feed-page__posts" aria-label="Latest posts">
-        {MOCK_POSTS.map((post) => (
-          <PostCard
-            key={post.id}
-            title={post.title}
-            author={post.author}
-            excerpt={post.excerpt}
-            timestamp={post.timestamp}
-          />
-        ))}
+        {isLoading && <p className="feed-page__status">게시글을 불러오는 중입니다...</p>}
+        {error && !isLoading && <p className="feed-page__status feed-page__status--error">{error}</p>}
+        {!isLoading && !error && posts.length === 0 && (
+          <p className="feed-page__status">아직 게시글이 없습니다.</p>
+        )}
+        {!isLoading && !error &&
+          posts.map((post) => (
+            <PostCard
+              key={post.id}
+              title={post.title}
+              content={post.content}
+              createdAt={post.createdAt}
+              likeCount={post.likeCount}
+              commentCount={post.commentCount}
+              authorDisplay={post.authorDisplay}
+              pinned={post.pinned}
+              imageUrl={post.images?.[0] ?? null}
+            />
+          ))}
       </section>
 
       <div data-testid="smoke">FEED SCAFFOLD OK</div>

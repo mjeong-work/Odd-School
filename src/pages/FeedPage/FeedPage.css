@@ -39,3 +39,16 @@
   flex-direction: column;
   gap: var(--space-md);
 }
+
+.feed-page__status {
+  margin: 0;
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-alt, rgba(0, 0, 0, 0.03));
+  color: var(--color-text-secondary);
+}
+
+.feed-page__status--error {
+  color: var(--color-danger, #c62828);
+  background-color: rgba(198, 40, 40, 0.08);
+}

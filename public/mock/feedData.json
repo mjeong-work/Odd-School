@@ -1,0 +1,100 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "category": "current",
+      "title": "시험기간 공지",
+      "content": "중간고사 일정이 발표되었습니다.",
+      "images": [],
+      "likeCount": 3,
+      "commentCount": 1,
+      "createdAt": "2025-11-10T09:00:00Z",
+      "authorDisplay": "Anonymous",
+      "pinned": false
+    },
+    {
+      "id": 2,
+      "category": "alumni",
+      "title": "졸업생 네트워킹 모임",
+      "content": "다음 달 서울에서 열릴 예정입니다.",
+      "images": [],
+      "likeCount": 12,
+      "commentCount": 4,
+      "createdAt": "2025-11-08T15:00:00Z",
+      "authorDisplay": "Admin",
+      "pinned": true
+    },
+    {
+      "id": 3,
+      "category": "all",
+      "title": "신입생 환영회",
+      "content": "오는 주말 본교 강당에서 진행됩니다.",
+      "images": [],
+      "likeCount": 8,
+      "commentCount": 2,
+      "createdAt": "2025-11-05T12:30:00Z",
+      "authorDisplay": "Student Council",
+      "pinned": false
+    },
+    {
+      "id": 4,
+      "category": "current",
+      "title": "도서관 야간 운영",
+      "content": "시험 기간 동안 도서관이 밤 12시까지 연장 운영됩니다.",
+      "images": [],
+      "likeCount": 15,
+      "commentCount": 5,
+      "createdAt": "2025-11-04T20:10:00Z",
+      "authorDisplay": "Library",
+      "pinned": true
+    },
+    {
+      "id": 5,
+      "category": "alumni",
+      "title": "멘토링 프로그램 모집",
+      "content": "선배 멘토와의 1:1 멘토링 참가자를 모집합니다.",
+      "images": [],
+      "likeCount": 6,
+      "commentCount": 3,
+      "createdAt": "2025-11-02T08:45:00Z",
+      "authorDisplay": "Career Center",
+      "pinned": false
+    },
+    {
+      "id": 6,
+      "category": "current",
+      "title": "동아리 박람회",
+      "content": "다양한 동아리가 참가하는 박람회에 참여해 보세요.",
+      "images": [],
+      "likeCount": 10,
+      "commentCount": 6,
+      "createdAt": "2025-10-30T10:00:00Z",
+      "authorDisplay": "Student Affairs",
+      "pinned": false
+    },
+    {
+      "id": 7,
+      "category": "all",
+      "title": "장학금 신청 안내",
+      "content": "다음 학기 장학금 신청이 시작되었습니다.",
+      "images": [],
+      "likeCount": 20,
+      "commentCount": 9,
+      "createdAt": "2025-10-28T14:20:00Z",
+      "authorDisplay": "Finance Office",
+      "pinned": false
+    },
+    {
+      "id": 8,
+      "category": "alumni",
+      "title": "글로벌 인턴십 후기",
+      "content": "해외 인턴십 참여 선배의 생생한 경험담을 공유합니다.",
+      "images": [],
+      "likeCount": 9,
+      "commentCount": 2,
+      "createdAt": "2025-10-25T09:35:00Z",
+      "authorDisplay": "Global Office",
+      "pinned": false
+    }
+  ]
+}
