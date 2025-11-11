@@ -36,5 +36,5 @@ The deploy script publishes the contents of the `dist` directory to the `gh-page
 Once the GitHub Pages workflow has run, the app will be available at:
 
 ```
-https://mjeong-work.github.io/Odd-School_v1/#/
+https://mjeong-work.github.io/Odd-School/#/
 ```
