@@ -5,6 +5,7 @@ import * as MarketplacePage from './pages/marketplace.js';
 import * as AdminPage from './pages/admin.js';
 import * as ProfilePage from './pages/profile.js';
 import * as MessagesPage from './pages/messages.js';
+import * as ReactExamplePage from './pages/react-example.js';
 
 const app = document.getElementById('app');
 const router = new Router();
@@ -19,5 +20,6 @@ router.addRoute('/marketplace', () => renderPage(MarketplacePage));
 router.addRoute('/admin', () => renderPage(AdminPage));
 router.addRoute('/profile', () => renderPage(ProfilePage));
 router.addRoute('/messages', () => renderPage(MessagesPage));
+router.addRoute('/react-example', () => renderPage(ReactExamplePage));
 
 router.init();

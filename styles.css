@@ -125,3 +125,75 @@ main#app {
     border: 2px dashed #e0e0e0;
     margin-top: 1rem;
 }
+
+.react-example h1 {
+    margin-bottom: 0.5rem;
+}
+
+.lede {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    margin-bottom: 1.25rem;
+}
+
+.card h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    color: #1f2937;
+}
+
+.card p {
+    margin-bottom: 0.75rem;
+}
+
+.checklist {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.checklist li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: #374151;
+}
+
+.checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: 700;
+}
+
+.code-block {
+    background: #0b172a;
+    color: #d1e8ff;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.code-block code {
+    white-space: pre;
+}
+
+.react-shell header h1 {
+    margin-bottom: 0.25rem;
+}
+
+.muted {
+    color: #6b7280;
+}
