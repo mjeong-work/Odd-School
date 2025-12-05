@@ -197,3 +197,144 @@ main#app {
 .muted {
     color: #6b7280;
 }
+
+/* change */
+
+.marketplace-page {
+    padding: 20px 60px;
+    font-family: Arial, sans-serif;
+}
+
+.page-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.tab {
+    padding: 10px 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: gray;
+}
+
+.tab.active {
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+.item-card {
+    width: 650px;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.item-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    background: #a9c4ff;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.details {
+    font-size: 14px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.date {
+    color: gray;
+}
+
+.item-title {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.price-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tag {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    background: #eee;
+}
+
+.condition {
+    background: #c8ffd5;
+}
+
+.good {
+    background: #d0e4ff;
+}
+
+.category {
+    background: #f2e4ff;
+}
+
+.desc {
+    color: #333;
+    font-size: 14px;
+}
+
+.item-image {
+    width: 100%;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.likes {
+    font-size: 14px;
+}
+
+.email {
+    font-size: 14px;
+    color: gray;
+}
+
+.contact-btn {
+    background: black;
+    color: white;
+    border-radius: 20px;
+    padding: 6px 14px;
+    border: none;
+    cursor: pointer;
+}
